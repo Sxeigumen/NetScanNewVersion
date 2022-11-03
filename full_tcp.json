@@ -1,0 +1,33 @@
+{
+   "ip": {
+      "192.168.50.1": {
+         "ports": [
+            {
+               "53": {
+                  "port_info": "Service: DOMAIN"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP"
+               }
+            }
+         ]
+      },
+      "192.168.50.56": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 Welcome to blah FTP service."
+               }
+            }
+         ]
+      },
+      "192.168.50.62": "No open ports",
+      "192.168.50.123": "No open ports",
+      "192.168.50.138": "No open ports",
+      "192.168.50.178": "No open ports",
+      "192.168.50.156": "No open ports",
+      "192.168.50.252": "No open ports"
+   }
+}
