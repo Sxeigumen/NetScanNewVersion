@@ -14,20 +14,54 @@
             }
          ]
       },
+      "192.168.50.8": "No open ports",
       "192.168.50.56": {
          "ports": [
             {
                "21": {
                   "port_info": "Banner: 220 Welcome to blah FTP service."
                }
+            },
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP"
+               }
+            },
+            {
+               "139": {
+                  "port_info": "Service: NETBIOS-SSN"
+               }
+            },
+            {
+               "445": {
+                  "port_info": "Service: MICROSOFT-DS"
+               }
             }
          ]
       },
-      "192.168.50.62": "No open ports",
-      "192.168.50.123": "No open ports",
       "192.168.50.138": "No open ports",
-      "192.168.50.178": "No open ports",
+      "192.168.50.146": {
+         "ports": [
+            {
+               "139": {
+                  "port_info": "Service: NETBIOS-SSN"
+               }
+            },
+            {
+               "445": {
+                  "port_info": "Service: MICROSOFT-DS"
+               }
+            }
+         ]
+      },
+      "192.168.50.155": "No open ports",
       "192.168.50.156": "No open ports",
-      "192.168.50.252": "No open ports"
+      "192.168.50.178": "No open ports",
+      "192.168.50.247": "No open ports"
    }
 }
