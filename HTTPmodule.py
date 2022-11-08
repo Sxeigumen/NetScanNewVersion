@@ -24,6 +24,8 @@ class httpModule:
             sock.close()
         except ConnectionRefusedError:
             print("Connection refused!")
+        except TimeoutError:
+            print("IP unavailable or Connection refused!")
 
     def getMassage(self):
         info = self.content.split('\r\n')   #поставил \r
@@ -49,7 +51,7 @@ class httpModule:
             json.dump(data_base, file, indent=3)
 
 
-pp = httpModule("192.168.50.56")
+pp = httpModule("192.168.50.1")
 pp.unitScan()
 pp.getMassage()
 pp.toJson()

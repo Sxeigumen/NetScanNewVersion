@@ -26,6 +26,8 @@ parser.add_argument('-auth_ftp', type=str, default=None, help='Auth FTP scan.')
 parser.add_argument('-login', type=str, default=None, help='Login fo auth.')
 parser.add_argument('-password', type=str, default=None, help='Password fo auth.')
 
+parser.add_argument('-http', type=str, default=None, help='Anon FTP scan.')
+
 args = parser.parse_args()
 
 working_network = BasicScannerModule.NetworkScanFunc()
@@ -59,3 +61,7 @@ if args.auth_ftp:
 
 if args.full_tcp:
     NetworkScannerModule.full_tcp_func(working_network.network_base)
+
+
+if args.http:
+    NetworkScannerModule.http_scan(args.http)

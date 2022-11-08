@@ -4,6 +4,7 @@ import BasicScannerModule
 import FtpModule
 import time
 import json
+import HTTPmodule
 
 
 def network_scan_func(_network, file_name=None):
@@ -66,3 +67,14 @@ def full_tcp_func(_network):
     print(data_base)
     with open("full_tcp.json", "w") as file:
         json.dump(data_base, file, indent=3)
+
+
+def http_scan(ip):
+    target = HTTPmodule.httpModule(ip)
+    target.unitScan()
+    target.getMassage()
+    target.toJson()
+    print(f"HTTP Module")
+    print(f"IP: {ip}")
+    print(f"Status: {target.status}")
+    print(f"Banner: {target.banner}")
