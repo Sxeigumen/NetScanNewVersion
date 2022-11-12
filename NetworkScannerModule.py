@@ -26,7 +26,7 @@ def default_ports_func(_ip):
     targetIp.port_status_print()
 
 
-def full_tcp_func(_network):
+def full_tcp_func(_network, details_mode):
     data_base = {}
     ip_data = {}
     print(_network)
@@ -41,26 +41,37 @@ def full_tcp_func(_network):
         targetIp.ip_ports_scan(default_ports_list)
 
         for elem in targetIp.ports_banners.keys():
-            info = {"port_info": "Banner: " + targetIp.ports_banners[elem]}
+            info = {"port_info": "Banner: " + targetIp.ports_banners[elem], "danger_level": "High risk"}
             port_info = {elem: info}
             single_ip_ports.append(port_info)
             print(port_info)
 
         for elem in targetIp.ports_services.keys():
-            info = {"port_info": "Service: " + targetIp.ports_services[elem]}
+            info = {"port_info": "Service: " + targetIp.ports_services[elem], "danger_level": "Medium risk"}
             port_info = {elem: info}
             single_ip_ports.append(port_info)
             print(port_info)
 
-        ports_data["ports"] = single_ip_ports
+        if not details_mode:
+            ports_data["ports"] = single_ip_ports
 
-        if len(ports_data["ports"]) == 0:
-            ip_data[ip["ip"]] = "No open ports"
+            if len(ports_data["ports"]) == 0:
+                ip_data[ip["ip"]] = "No open ports"
+            else:
+                ip_data[ip["ip"]] = ports_data
+
         else:
+            for elem in targetIp.closed_ports.keys():
+                info = {"danger_level": "low risk"}
+                port_info = {elem: info}
+                single_ip_ports.append(port_info)
+                print(port_info)
+
+            ports_data["ports"] = single_ip_ports
             ip_data[ip["ip"]] = ports_data
 
     data_base["ip"] = ip_data
-    print(data_base)
+    """print(data_base)"""
     with open("full_tcp.json", "w") as file:
         json.dump(data_base, file, indent=3)
 

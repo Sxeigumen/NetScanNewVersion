@@ -12,6 +12,7 @@ parser = argparse.ArgumentParser(description='Scan and analyze network and ports
 parser.add_argument('-network', type=bool, default=False, help='Scanning device ports with this IP.')
 parser.add_argument('-cidr', type=str, default="/24", help='IPs range.')
 parser.add_argument('-full_tcp', type=bool, default=False, help='Full TCP-scan.')
+parser.add_argument('-mode', type=bool, default=False, help='Output of complete information about the network.')
 
 parser.add_argument('-ip', type=str, default=BasicScannerModule.local_ip(), help='IP of this computer.')
 
@@ -50,8 +51,9 @@ if args.auth_ftp:
     NetworkScannerModule.auth_ftp(args.auth_ftp, args.login, args.password)
 
 if args.full_tcp:
-    NetworkScannerModule.full_tcp_func(working_network.network_base)
+    NetworkScannerModule.full_tcp_func(working_network.network_base, args.mode)
 
 
 if args.http:
     NetworkScannerModule.http_scan(args.http)
+

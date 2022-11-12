@@ -4,64 +4,739 @@
          "ports": [
             {
                "53": {
-                  "port_info": "Service: DOMAIN"
+                  "port_info": "Service: DOMAIN",
+                  "danger_level": "Medium risk"
                }
             },
             {
                "80": {
-                  "port_info": "Service: HTTP"
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
                }
-            }
-         ]
-      },
-      "192.168.50.8": "No open ports",
-      "192.168.50.56": {
-         "ports": [
+            },
+            {
+               "20": {
+                  "danger_level": "low risk"
+               }
+            },
             {
                "21": {
-                  "port_info": "Banner: 220 Welcome to blah FTP service."
+                  "danger_level": "low risk"
                }
             },
             {
                "22": {
-                  "port_info": "Banner: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3"
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "23": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "25": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "67": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "68": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "69": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "110": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "119": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "139": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "143": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "389": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "443": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "445": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "465": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "569": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "587": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "990": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "993": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "995": {
+                  "danger_level": "low risk"
+               }
+            }
+         ]
+      },
+      "192.168.50.8": {
+         "ports": [
+            {
+               "20": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "21": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "22": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "23": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "25": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "53": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "67": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "68": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "69": {
+                  "danger_level": "low risk"
                }
             },
             {
                "80": {
-                  "port_info": "Service: HTTP"
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "110": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "119": {
+                  "danger_level": "low risk"
                }
             },
             {
                "139": {
-                  "port_info": "Service: NETBIOS-SSN"
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "143": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "389": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "443": {
+                  "danger_level": "low risk"
                }
             },
             {
                "445": {
-                  "port_info": "Service: MICROSOFT-DS"
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "465": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "569": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "587": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "990": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "993": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "995": {
+                  "danger_level": "low risk"
                }
             }
          ]
       },
-      "192.168.50.138": "No open ports",
-      "192.168.50.146": {
+      "192.168.50.56": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 Welcome to blah FTP service.",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "139": {
+                  "port_info": "Service: NETBIOS-SSN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "445": {
+                  "port_info": "Service: MICROSOFT-DS",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "20": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "23": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "25": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "53": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "67": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "68": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "69": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "110": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "119": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "143": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "389": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "443": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "465": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "569": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "587": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "990": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "993": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "995": {
+                  "danger_level": "low risk"
+               }
+            }
+         ]
+      },
+      "192.168.50.63": {
+         "ports": [
+            {
+               "20": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "21": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "22": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "23": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "25": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "53": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "67": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "68": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "69": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "80": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "110": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "119": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "139": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "143": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "389": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "443": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "445": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "465": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "569": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "587": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "990": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "993": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "995": {
+                  "danger_level": "low risk"
+               }
+            }
+         ]
+      },
+      "192.168.50.138": {
          "ports": [
             {
                "139": {
-                  "port_info": "Service: NETBIOS-SSN"
+                  "port_info": "Service: NETBIOS-SSN",
+                  "danger_level": "Medium risk"
                }
             },
             {
                "445": {
-                  "port_info": "Service: MICROSOFT-DS"
+                  "port_info": "Service: MICROSOFT-DS",
+                  "danger_level": "Medium risk"
                }
             }
          ]
       },
-      "192.168.50.155": "No open ports",
-      "192.168.50.156": "No open ports",
-      "192.168.50.178": "No open ports",
-      "192.168.50.247": "No open ports"
+      "192.168.50.155": {
+         "ports": [
+            {
+               "20": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "21": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "22": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "23": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "25": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "53": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "67": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "68": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "69": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "80": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "110": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "119": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "139": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "143": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "389": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "443": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "445": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "465": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "569": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "587": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "990": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "993": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "995": {
+                  "danger_level": "low risk"
+               }
+            }
+         ]
+      },
+      "192.168.50.123": {
+         "ports": []
+      },
+      "192.168.50.178": {
+         "ports": []
+      },
+      "192.168.50.156": {
+         "ports": [
+            {
+               "20": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "21": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "23": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "25": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "53": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "67": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "68": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "69": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "80": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "110": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "119": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "139": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "143": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "389": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "443": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "445": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "465": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "569": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "587": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "990": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "993": {
+                  "danger_level": "low risk"
+               }
+            },
+            {
+               "995": {
+                  "danger_level": "low risk"
+               }
+            }
+         ]
+      }
    }
 }

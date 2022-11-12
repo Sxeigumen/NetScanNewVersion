@@ -60,7 +60,7 @@ class httpModule:
 
 
 if __name__ == "__main__":
-    pp = httpModule("192.168.50.2")
+    pp = httpModule("192.168.50.56")
     pp.unitScan()
     pp.getMassage()
     pp.toJson()
