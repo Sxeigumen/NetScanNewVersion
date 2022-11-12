@@ -7,12 +7,8 @@ import json
 import HTTPmodule
 
 
-def network_scan_func(_network, file_name=None):
+def network_scan_func(_network):
     _network.print_network_scanning_information()
-    if file_name is not None:
-        ips = {"ips": _network.network_base}
-        with open(file_name, 'w') as in_file:
-            json.dump(ips, in_file, indent=3)
 
 
 def port_func(_ip, _port):
@@ -75,6 +71,38 @@ def http_scan(ip):
     target.getMassage()
     target.toJson()
     print(f"HTTP Module")
-    print(f"IP: {ip}")
+    print(f"HOST: {ip}")
     print(f"Status: {target.status}")
     print(f"Banner: {target.banner}")
+
+
+def auth_ftp(ip, login, password):
+    target = FtpModule.ftpModule(ip, login, password)
+    print(f"HTTP Module")
+    print(f"HOST: {target.host_ip}")
+    print(f"PORT: {target.port}/tcp")
+    print("FTP login with authentication")
+    print("---------------------------------------------")
+    target.getFtpBanner()
+    target.authLogin()
+    print("---------------------------------------------")
+    print(f"Banner: {target.banner}")
+    print("---------------------------------------------")
+    print()
+    target.toJson()
+
+
+def anon_ftp(ip):
+    target = FtpModule.ftpModule(ip)
+    print(f"HTTP Module")
+    print(f"HOST: {target.host_ip}")
+    print(f"PORT: {target.port}/tcp")
+    print("Anonymous FTP login")
+    print("---------------------------------------------")
+    target.getFtpBanner()
+    target.anonLogin()
+    print("---------------------------------------------")
+    print(f"Banner: {target.banner}")
+    print("---------------------------------------------")
+    print()
+    target.toJson()

@@ -6,6 +6,12 @@ import json
 
 # sock.sendall(b"GET / HTTP/1.1\r\nHost:" + self.ip.encode('UTF-8') + b"\r\nConnection: close\r\n\r\n")
 
+class httpStatus:
+    successful_connection = "Successful connection"
+    impossible_connection = "IP unavailable or Connection refused!"
+    refused_connection = "Computer refused connection"
+
+
 class httpModule:
 
     def __init__(self, _ip=''):
@@ -23,12 +29,14 @@ class httpModule:
             self.content = sock.recv(4096).strip().decode()
             sock.close()
         except ConnectionRefusedError:
-            print("Connection refused!")
+            print(httpStatus.refused_connection)
+            self.status = httpStatus.refused_connection
         except TimeoutError:
-            print("IP unavailable or Connection refused!")
+            print(httpStatus.impossible_connection)
+            self.status = httpStatus.impossible_connection
 
     def getMassage(self):
-        info = self.content.split('\r\n')   #поставил \r
+        info = self.content.split('\r\n')
 
         for elem in info:
             if "Server:" in elem:
@@ -42,8 +50,8 @@ class httpModule:
         data_base = {}
         main_info = []
         ip = {f"Ip: {self.ip}"}
-        status = {f"Status:": self.status}
-        banner = {f"Banner:": self.banner}
+        status = {f"Status": self.status}
+        banner = {f"Banner": self.banner}
         main_info.append(status)
         main_info.append(banner)
         data_base[f"{self.ip}"] = main_info
@@ -51,7 +59,8 @@ class httpModule:
             json.dump(data_base, file, indent=3)
 
 
-pp = httpModule("192.168.50.1")
-pp.unitScan()
-pp.getMassage()
-pp.toJson()
+if __name__ == "__main__":
+    pp = httpModule("192.168.50.2")
+    pp.unitScan()
+    pp.getMassage()
+    pp.toJson()
