@@ -4,36 +4,39 @@ import socket
 import json
 
 
-class sshStatus:
+class DnsStatus:
     successful_connection = "Successful connection"
     impossible_connection = "IP unavailable or Connection refused!"
     refused_connection = "Computer refused connection"
 
 
-class SSHModule:
+class DNSModule:
     def __init__(self, _ip):
         self.ip = _ip
         self.banner = ''
         self.status = ''
+        self.host_name = ''
 
     def unitScan(self):
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.settimeout(10)
-            sock.connect((self.ip, 22))
+            sock.connect((self.ip, 53))
+            host_name = socket.gethostbyaddr(self.ip)[0]
+            self.host_name = host_name
             banner = sock.recv(1024).strip().decode()
             self.banner = banner
             sock.close()
-            self.status = sshStatus.successful_connection
+            self.status = DnsStatus.successful_connection
         except TimeoutError:
-            print(sshStatus.impossible_connection)
-            self.status = sshStatus.impossible_connection
+            print(DnsStatus.impossible_connection)
+            self.status = DnsStatus.impossible_connection
         except socket.timeout:
-            print(sshStatus.impossible_connection)
-            self.status = sshStatus.impossible_connection
+            print(DnsStatus.impossible_connection)
+            self.status = DnsStatus.impossible_connection
         except ConnectionRefusedError:
-            print(sshStatus.refused_connection)
-            self.status = sshStatus.refused_connection
+            print(DnsStatus.refused_connection)
+            self.status = DnsStatus.refused_connection
 
     def toJson(self):
         data_base = {}
@@ -41,13 +44,16 @@ class SSHModule:
         ip = {f"Ip: {self.ip}"}
         status = {f"Status": self.status}
         banner = {f"Banner": self.banner}
+        host_name = {f"Host Name": self.host_name}
+        main_info.append(host_name)
         main_info.append(status)
         main_info.append(banner)
         data_base[f"{self.ip}"] = main_info
-        with open("ssh.json", "w") as file:
+        with open("dns.json", "w") as file:
             json.dump(data_base, file, indent=3)
 
 
 if __name__ == "__main__":
-    a = SSHModule("192.168.50.3")
+    a = DNSModule("192.168.50.1")
     a.unitScan()
+    a.toJson()

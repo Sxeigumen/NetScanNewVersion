@@ -24,6 +24,7 @@ class httpModule:
     def unitScan(self):
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.settimeout(15)
             sock.connect((self.ip, 80))
             sock.sendall(b"GET / HTTP/1.1\r\nHost:" + self.ip.encode('UTF-8') + b"\r\n\r\n")
             self.content = sock.recv(4096).strip().decode()
@@ -32,6 +33,9 @@ class httpModule:
             print(httpStatus.refused_connection)
             self.status = httpStatus.refused_connection
         except TimeoutError:
+            print(httpStatus.impossible_connection)
+            self.status = httpStatus.impossible_connection
+        except socket.timeout:
             print(httpStatus.impossible_connection)
             self.status = httpStatus.impossible_connection
 

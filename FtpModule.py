@@ -26,10 +26,14 @@ class ftpModule(object):
     def getFtpBanner(self):
         try:
             soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            soc.settimeout(15)
             soc.connect((self.host_ip, self.port))
             ban = soc.recv(1024).decode().strip()
             self.banner = ban
         except TimeoutError:
+            print("Getting banner is not possible")
+            self.banner = "Getting banner is not possible"
+        except socket.timeout:
             print("Getting banner is not possible")
             self.banner = "Getting banner is not possible"
         except ConnectionRefusedError:

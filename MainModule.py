@@ -45,7 +45,7 @@ if args.default_ports:
 
 
 if args.anon_ftp:
-    NetworkScannerModule.anon_ftp(args.auth_ftp)
+    NetworkScannerModule.anon_ftp(args.anon_ftp)
 
 if args.auth_ftp:
     NetworkScannerModule.auth_ftp(args.auth_ftp, args.login, args.password)
