@@ -2,7 +2,7 @@
 import scapy.all as scapy
 import argparse
 import BasicScannerModule
-import FtpModule
+import FTPmodule
 import NetworkScannerModule
 import time
 import json

@@ -1,7 +1,7 @@
 import scapy.all as scapy
 import argparse
 import BasicScannerModule
-import FtpModule
+import FTPmodule
 import time
 import json
 import HTTPmodule
@@ -88,7 +88,7 @@ def http_scan(ip):
 
 
 def auth_ftp(ip, login, password):
-    target = FtpModule.ftpModule(ip, login, password)
+    target = FTPmodule.ftpModule(ip, login, password)
     print(f"HTTP Module")
     print(f"HOST: {target.host_ip}")
     print(f"PORT: {target.port}/tcp")
@@ -104,7 +104,7 @@ def auth_ftp(ip, login, password):
 
 
 def anon_ftp(ip):
-    target = FtpModule.ftpModule(ip)
+    target = FTPmodule.ftpModule(ip)
     print(f"HTTP Module")
     print(f"HOST: {target.host_ip}")
     print(f"PORT: {target.port}/tcp")
