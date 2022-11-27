@@ -16,33 +16,8 @@
             }
          ]
       },
-      "192.168.50.13": {
-         "ports": [
-            {
-               "80": {
-                  "port_info": "Service: HTTP",
-                  "danger_level": "Medium risk"
-               }
-            },
-            {
-               "443": {
-                  "port_info": "Service: HTTPS",
-                  "danger_level": "Medium risk"
-               }
-            }
-         ]
-      },
-      "192.168.50.138": {
-         "ports": [
-            {
-               "445": {
-                  "port_info": "Service: MICROSOFT-DS",
-                  "danger_level": "Medium risk"
-               }
-            }
-         ]
-      },
-      "192.168.50.146": {
+      "192.168.50.8": "No open ports",
+      "192.168.50.137": {
          "ports": [
             {
                "139": {
@@ -58,9 +33,9 @@
             }
          ]
       },
-      "192.168.50.155": "No open ports",
+      "192.168.50.154": "No open ports",
       "192.168.50.178": "No open ports",
-      "192.168.50.156": "No open ports",
+      "192.168.50.155": "No open ports",
       "192.168.50.252": "No open ports"
    }
 }

@@ -53,7 +53,7 @@ class PortScanFunc(object):
         self.ports_banners = {}
         self.ports_services = {}
         self.closed_ports = {}
-
+    """
     def port_scan(self, port):
         ip_request = scapy.IP(dst=self.target_ip)
         syn_request = scapy.TCP(dport=port, flags="S")
@@ -76,7 +76,7 @@ class PortScanFunc(object):
             else:
                 port_lib = {"port_status": PortStatus.CLOSED, "port_number": port}
                 return port_lib
-
+    """
     def secret_port_scan(self, port):
         ip_request = scapy.IP(dst=self.target_ip)
         syn_request = scapy.TCP(dport=port, flags="S")
@@ -87,12 +87,12 @@ class PortScanFunc(object):
         if returned_answer is not None:
 
             if returned_answer.getlayer(scapy.TCP).flags == "SA":
-
+                """
                 rst_request = scapy.TCP(dport=port, flags="R")
                 rst_packet = ip_request / rst_request
 
                 send_rst = scapy.sr(rst_packet, timeout=1, verbose=False)
-
+                """
                 port_lib = {"port_status": PortStatus.OPEN, "port_number": port}
                 return port_lib
 

@@ -54,6 +54,6 @@ class DNSModule:
 
 
 if __name__ == "__main__":
-    a = DNSModule("192.168.50.1")
+    a = DNSModule("216.58.209.174")
     a.unitScan()
     a.toJson()
