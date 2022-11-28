@@ -49,6 +49,20 @@ input("Press Enter to the exit....")
 """
 
 
+def ip_list_creator(ip_range):
+    addrs = ipaddress.ip_network(ip_range)
+    ip_list = [str(ip) for ip in addrs]
+    return ip_list
+
+
+class IpInfo(object):
+
+    def __init__(self, _ip, _cidr):
+        self.target_ip = _ip
+        self.cidr = _cidr
+        self.ips_list = ip_list_creator(_ip + '/' + _cidr)
+
+
 class PortScanFunc(object):
 
     def __init__(self, _ip):
@@ -121,7 +135,7 @@ class PortScanFunc(object):
             if target_ports['port_status'] == "Closed":
                 self.closed_ports.update({target_ports['port_number']: target_ports['port_status']})
 
-    def port_status_print(self):
+    def console_print(self):
 
         for elem in self.ports_banners.keys():
             try:
@@ -137,14 +151,31 @@ class PortScanFunc(object):
 
         for elem in self.closed_ports.keys():
             print(str(elem) + '/tcp' + '\t' * 2 + self.closed_ports[elem])
-
         print("\n")
+
+    def only_meaningful_print(self):
+        print("IP: " + self.target_ip + '\n')
+        for elem in self.ports_banners.keys():
+            try:
+                print(f"{str(elem) + '/tcp':<8}   Open  {get_port_service(elem):<8}   Banner: {self.ports_banners[elem]}")
+            except TypeError:
+                print(f"{str(elem) + '/tcp':<8}   Open  {get_port_service(elem):<8}   Banner: ")
+                print(self.ports_banners[elem])
+
+
+def inet_scanner(ip, cidr):
+    target = IpInfo(ip, cidr)
+    for ip in target.ips_list:
+        scan_obj = PortScanFunc(ip)
+        scan_obj.ip_ports_scan(ports.keys())
+        scan_obj.only_meaningful_print()
 
 
 default_ports = []
 default_ports += ports.keys()
 
 if __name__ == "__main__":
+    """    
     text = open('banners_example.txt', 'w')
     set1 = ipaddress.ip_network('195.19.0.0/16')
     ip_list = [str(ip) for ip in set1]
@@ -152,7 +183,7 @@ if __name__ == "__main__":
         print(ip)
         x = PortScanFunc(ip)
         x.ip_ports_scan(ports.keys())
-        x.port_status_print()
+        x.console_print()
         for elem in x.ports_banners:
             try:
                 text.write(x.ports_banners[elem] + '\n')
@@ -161,5 +192,5 @@ if __name__ == "__main__":
 
         print("=======================")
     text.close()
-
-    # ip = socket.gethostbyname('github.com')
+    """
+    inet_scanner("87.240.129.0", '24')

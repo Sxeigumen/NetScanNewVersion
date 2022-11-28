@@ -85,21 +85,23 @@ class PortScanFunc(object):
         returned_answer = scapy.sr1(syn_packet, timeout=1, verbose=False)
 
         if returned_answer is not None:
+            try:
+                if returned_answer.getlayer(scapy.TCP).flags == "SA":
+                    """
+                    rst_request = scapy.TCP(dport=port, flags="R")
+                    rst_packet = ip_request / rst_request
+    
+                    send_rst = scapy.sr(rst_packet, timeout=1, verbose=False)
+                    """
+                    port_lib = {"port_status": PortStatus.OPEN, "port_number": port}
+                    return port_lib
 
-            if returned_answer.getlayer(scapy.TCP).flags == "SA":
-                """
-                rst_request = scapy.TCP(dport=port, flags="R")
-                rst_packet = ip_request / rst_request
+                elif returned_answer.getlayer(scapy.TCP).flags == "RA":
 
-                send_rst = scapy.sr(rst_packet, timeout=1, verbose=False)
-                """
-                port_lib = {"port_status": PortStatus.OPEN, "port_number": port}
-                return port_lib
-
-            elif returned_answer.getlayer(scapy.TCP).flags == "RA":
-
-                port_lib = {"port_status": PortStatus.CLOSED, "port_number": port}
-                return port_lib
+                    port_lib = {"port_status": PortStatus.CLOSED, "port_number": port}
+                    return port_lib
+            except AttributeError:
+                port_lib = {"port_status": PortStatus.FILTERED, "port_number": port}
 
         port_lib = {"port_status": PortStatus.FILTERED, "port_number": port}
         return port_lib
@@ -113,10 +115,12 @@ class PortScanFunc(object):
             if target_ports['port_status'] == "Open":
                 host = self.target_ip
                 port = target_ports['port_number']
-
-                soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                soc.connect((host, port))
-                soc.settimeout(2)
+                try:
+                    soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                    soc.connect((host, port))
+                    soc.settimeout(2)
+                except TimeoutError:
+                    continue
                 try:
                     banner = soc.recv(1024).decode().strip()
                     if banner == "":
@@ -128,15 +132,32 @@ class PortScanFunc(object):
                     self.ports_services.update(
                         {target_ports['port_number']: get_port_service(target_ports['port_number'])})
 
+                except UnicodeDecodeError:
+                    try:
+                        banner = soc.recv(1024)
+                        if banner == "":
+                            self.ports_services.update(
+                                {target_ports['port_number']: get_port_service(target_ports['port_number'])})
+                        else:
+                            self.ports_banners.update({target_ports['port_number']: banner})
+                    except socket.timeout:
+                        self.ports_services.update(
+                            {target_ports['port_number']: get_port_service(target_ports['port_number'])})
+
             if target_ports['port_status'] == "Closed":
                 self.closed_ports.update({target_ports['port_number']: target_ports['port_status']})
 
     def port_status_print(self):
 
         for elem in self.ports_banners.keys():
-            print(
-                str(elem) + '/tcp' + '\t' * 2 + "  Open" + '\t' * 2 + str(get_port_service(elem)) + '\t' + "Banner: " +
-                self.ports_banners[elem])
+            try:
+                print(
+                    str(elem) + '/tcp' + '\t' * 2 + "  Open" + '\t' * 2 + str(get_port_service(elem)) + '\t' + "Banner: " +
+                    self.ports_banners[elem])
+            except TypeError:
+                print(str(elem) + '/tcp' + '\t' * 2 + "  Open" + '\t' * 2 + str(get_port_service(elem)) + '\t'
+                      + "Banner: ")
+                print(self.ports_banners[elem])
 
         for elem in self.ports_services.keys():
             print(str(elem) + '/tcp' + '\t' * 2 + "  Open" + '\t' * 2 + "Service: " + self.ports_services[elem])
