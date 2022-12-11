@@ -238,7 +238,10 @@ def inet_scanner_list(typer, details_mode=False):
         ports_data = {}
 
         scan_obj = PortScanFunc(obj)
-        scan_obj.ip_ports_scan(ports.keys())
+        try:
+            scan_obj.ip_ports_scan(ports.keys())
+        except socket.gaierror:
+            continue
         scan_obj.console_print()
 
         for elem in scan_obj.ports_banners.keys():
