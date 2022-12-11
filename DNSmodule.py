@@ -5,6 +5,7 @@ import json
 import dns.resolver
 
 
+# Класс содержит возможные статусы порта 53
 class DnsStatus:
     successful_connection = "Successful connection"
     impossible_connection = "IP unavailable or Connection refused!"
@@ -19,6 +20,7 @@ class DNSModule:
         self.host_name = ''
         self.answer = ''
 
+    # Функция сканирования порта 53
     def unitScan(self):
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -43,6 +45,7 @@ class DNSModule:
             print(DnsStatus.refused_connection)
             self.status = DnsStatus.refused_connection
 
+    # Функция для отправки запросов на DNS сервер
     def getRequest(self):
         try:
             host_name = socket.gethostbyaddr(self.ip)[0]
@@ -64,6 +67,7 @@ class DNSModule:
                 continue
             print(answer.rrset)
 
+    # Функция для создания отчёта о сканировании
     def toJson(self):
         data_base = {}
         main_info = []
@@ -80,6 +84,4 @@ class DNSModule:
 
 
 if __name__ == "__main__":
-    a = DNSModule()
-    a.getRequest()
-    a.unitScan()
+    print("dns")

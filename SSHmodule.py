@@ -4,6 +4,7 @@ import socket
 import json
 
 
+# Класс содержит возможные статусы порта 22
 class sshStatus:
     successful_connection = "Successful connection"
     impossible_connection = "IP unavailable or Connection refused!"
@@ -16,6 +17,7 @@ class SSHModule:
         self.banner = ''
         self.status = ''
 
+    # Функция для сканирования порта 22
     def unitScan(self):
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -35,6 +37,7 @@ class SSHModule:
             print(sshStatus.refused_connection)
             self.status = sshStatus.refused_connection
 
+    # Функция для создания отчёта о сканировании
     def toJson(self):
         data_base = {}
         main_info = []
@@ -49,5 +52,4 @@ class SSHModule:
 
 
 if __name__ == "__main__":
-    a = SSHModule("192.168.50.3")
-    a.unitScan()
+    print('SSH')

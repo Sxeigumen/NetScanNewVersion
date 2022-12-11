@@ -11,10 +11,12 @@ import ExternalScanModule
 import AnalysisModule
 
 
+# Функция вывода информации о сети
 def network_scan_func(_network):
     _network.print_network_scanning_information()
 
 
+# Функция для сканирования порта
 def port_func(_ip, _port):
     print("IP: " + _ip)
     targetIp = BasicScannerModule.PortScanFunc(_ip)
@@ -22,6 +24,7 @@ def port_func(_ip, _port):
     targetIp.port_status_print()
 
 
+# Функция для сканирования списка базовых портов
 def default_ports_func(_ip):
     print("IP: " + _ip)
     default_ports_list = BasicScannerModule.default_ports
@@ -30,6 +33,7 @@ def default_ports_func(_ip):
     targetIp.port_status_print()
 
 
+# Функция для выполнения full_tcp сканирования
 def full_tcp_func(_network, details_mode):
     data_base = {}
     ip_data = {}
@@ -86,6 +90,7 @@ def full_tcp_func(_network, details_mode):
         json.dump(data_base, file, indent=3)
 
 
+# Функция для работы с http сервером
 def http_scan(ip):
     target = HTTPmodule.httpModule(ip)
     target.unitScan()
@@ -101,6 +106,7 @@ def http_scan(ip):
         print(target.headers)
 
 
+# Функция для работы с ftp сервером с аутентификацией по паролю и логину
 def auth_ftp(ip, login, password):
     target = FTPmodule.ftpModule(ip, login, password)
     print(f"HTTP Module")
@@ -117,6 +123,7 @@ def auth_ftp(ip, login, password):
     target.toJson()
 
 
+# Функция для работы с ftp сервером с анонимной аутентификацией
 def anon_ftp(ip):
     target = FTPmodule.ftpModule(ip)
     print(f"HTTP Module")
@@ -133,6 +140,7 @@ def anon_ftp(ip):
     target.toJson()
 
 
+# Функция для работы с dns
 def dns(ip):
     target = DNSmodule.DNSModule(ip)
     target.unitScan()
@@ -145,14 +153,17 @@ def dns(ip):
     target.getRequest()
 
 
+# Функция для сканирования внешней сети по IP с использованием бесклассовой адресации
 def external_scan_cidr(ip, cidr, details_mode):
-    ExternalScanModule.inet_scanner_cidr(ip, cidr, details_mode)
+    ExternalScanModule.inet_scanner_cidr(ip, cidr, details_mode=False)
 
 
-def external_scan_list(list, mode, details_mode):
-    ExternalScanModule.inet_scanner_cidr(list, mode, details_mode)
+# Функция для сканирования внешней сети по списку IP-адресов
+def external_scan_list(mode, details_mode):
+    ExternalScanModule.inet_scanner_list(mode, details_mode=False)
 
 
+# Функция для анализа отчёта
 def basic_analyze():
     target = AnalysisModule.Analysis()
     target.fileInit()
@@ -160,5 +171,5 @@ def basic_analyze():
 
 
 if __name__ == "__main__":
-    r = socket.gethostbyname('yandex.ru')
-    http_scan(r)
+    basic_analyze()
+

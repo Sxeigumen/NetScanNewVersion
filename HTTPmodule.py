@@ -10,6 +10,7 @@ import ssl
 
 # sock.sendall(b"GET / HTTP/1.1\r\nHost:" + self.ip.encode('UTF-8') + b"\r\nConnection: close\r\n\r\n")
 
+# Класс содержит возможные статусы порта 80
 class httpStatus:
     successful_connection = "Successful connection"
     impossible_connection = "IP unavailable or Connection refused!"
@@ -26,6 +27,7 @@ class httpModule:
         self.massage = ''
         self.headers = []
 
+    # Функция для сканирования порта 80
     def unitScan(self):
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -46,6 +48,7 @@ class httpModule:
             print(httpStatus.impossible_connection)
             self.status = httpStatus.impossible_connection
 
+    # Функция для получения сообщения с http сервера
     def getMassage(self):
         info = self.content.split('\r\n')
 
@@ -57,6 +60,7 @@ class httpModule:
             if "HTTP" in elem:
                 self.status = elem
 
+    # Функция для получения ответа на GET запрос
     def getHeaders(self):
         try:
             name = socket.gethostbyaddr(self.ip)[0]
@@ -72,7 +76,7 @@ class httpModule:
         except ConnectionRefusedError:
             print(httpStatus.impossible_connection)
 
-
+    # Функция для создания отчёта о сканировании
     def toJson(self):
         data_base = {}
         main_info = []
@@ -87,9 +91,4 @@ class httpModule:
 
 
 if __name__ == "__main__":
-    pp = httpModule("77.88.55.50")
-    pp.unitScan()
-    pp.getMassage()
-    pp.toJson()
-    pp.getHeaders()
-    print(pp.headers)
+    print('http')

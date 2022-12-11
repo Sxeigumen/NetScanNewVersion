@@ -17,6 +17,7 @@ ports = {
     5432: "PostgreSQL", 5900: "VNC", 8080: "Tomcat", 10000: "Webmin"}
 
 
+# Функция для определения сервиса по номеру порта
 def get_port_service(tmp_port):
     try:
         return socket.getservbyport(tmp_port).upper()
@@ -24,38 +25,21 @@ def get_port_service(tmp_port):
         return "UNKNOWN"
 
 
+# Класс хранит возможные статусы портов
 class PortStatus(object):
     OPEN = "Open"
     CLOSED = "Closed"
     FILTERED = "Filtered"
 
 
-"""
-host_name = sys.argv[1]
-ip = socket.gethostbyname(host_name)
-
-for port in ports:
-    cont = socket.socket()
-    cont.settimeout(1)
-    try:
-        cont.connect((ip, port))
-    except socket.error:
-        pass
-    else:
-        print(f"{socket.gethostbyname(ip)}:{str(port)} is open/{ports[port]}")
-    cont.close()
-ends = datetime.now()
-print("<Time:{}>".format(ends))
-input("Press Enter to the exit....")
-"""
-
-
+# Класс для создания списка адресов по CIDR
 def ip_list_creator(ip_range):
     addrs = ipaddress.ip_network(ip_range)
     ip_list = [str(ip) for ip in addrs]
     return ip_list
 
 
+# Класс хранит информацию о данном IP
 class IpInfo(object):
 
     def __init__(self, _ip, _cidr):
@@ -64,6 +48,7 @@ class IpInfo(object):
         self.ips_list = ip_list_creator(_ip + '/' + _cidr)
 
 
+# Класс используемый для проверки состояния и статуса порто
 class PortScanFunc(object):
 
     def __init__(self, _ip):
@@ -72,6 +57,7 @@ class PortScanFunc(object):
         self.ports_services = {}
         self.closed_ports = {}
 
+    # Функция реализующая метод сканирования
     def port_scan(self, port):
 
         sock = socket.socket()
@@ -85,6 +71,7 @@ class PortScanFunc(object):
         port_lib = {"port_status": PortStatus.OPEN, "port_number": port}
         return port_lib
 
+    # Функция реализующая метод сканирования SYN TCP
     def secret_port_scan(self, port):
         ip_request = scapy.IP(dst=self.target_ip)
         syn_request = scapy.TCP(dport=port, flags="S")
@@ -109,6 +96,7 @@ class PortScanFunc(object):
         port_lib = {"port_status": PortStatus.FILTERED, "port_number": port}
         return port_lib
 
+    # Функция сканирования портов на IP
     def ip_ports_scan(self, target_ports):
         if target_ports is None:
             target_ports += ports.keys()
@@ -149,6 +137,7 @@ class PortScanFunc(object):
             if target_ports['port_status'] == "Closed":
                 self.closed_ports.update({target_ports['port_number']: target_ports['port_status']})
 
+    # Функция для вывода полной инфрмации о состоянии портов на IP
     def console_print(self):
         print(self.target_ip)
         print(f"{'PORT':<10}  {'STATUS':<10}  {'INFO'}")
@@ -167,6 +156,7 @@ class PortScanFunc(object):
 
         print("\n")
 
+    # Функция для вывода только значимой инфрмации о состоянии портов на IP
     def only_meaningful_print(self):
         print("IP: " + self.target_ip + '\n')
         for elem in self.ports_banners.keys():
@@ -178,6 +168,7 @@ class PortScanFunc(object):
                 print(self.ports_banners[elem])
 
 
+# Функция сканирования подсети введённого IP
 def inet_scanner_cidr(_ip, cidr, details_mode=False):
     data_base = {}
     ip_data = {}
@@ -225,15 +216,23 @@ def inet_scanner_cidr(_ip, cidr, details_mode=False):
         json.dump(data_base, file, indent=3)
 
 
-def inet_scanner_list(ips_list, typer, details_mode=False):
+# Функция сканирования IP или доменных имён из файла
+def inet_scanner_list(typer, details_mode=False):
     data_base = {}
     ip_data = {}
-    for ip in ips_list:
+    targets = []
+    with open("targets.txt", "r") as file:
+        lines = file.readlines()
+        for elem in lines:
+            targets.append(elem[:-1])
+    for ip in targets:
         obj = ip
         if typer == 'domain':
             try:
                 obj = socket.gethostbyname(ip)
             except socket.herror:
+                continue
+            except socket.gaierror:
                 continue
         single_ip_ports = []
         ports_data = {}
@@ -281,5 +280,5 @@ default_ports = []
 default_ports += ports.keys()
 
 if __name__ == "__main__":
-    ip = ["h247.net50.bmstu.ru", 'mt11.bmstu.ru', 'rk1.bmstu.ru']
-    inet_scanner_list(ip, 'domain')
+    print('External')
+

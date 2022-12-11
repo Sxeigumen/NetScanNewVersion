@@ -10,6 +10,7 @@ class Analysis:
         self.medium_risk = []
         self.ips = []
 
+    # Функция для сортировки полученных данных
     def fileInit(self):
         with open("full_tcp.json", "r") as file:
             temp_db = json.load(file)
@@ -24,13 +25,14 @@ class Analysis:
                             info = {elem: ip}
                             self.high_risk.append(info)
                         if port[elem]['danger_level'] == 'Medium risk':
-                            info = {elem: ip}  # port[elem]["port_info"]
+                            info = {elem: ip}
                             self.medium_risk.append(info)
             except TypeError:
                 continue
 
+    # Функция для более глубокой проверки портов
     def checkAll(self):
-        for elem in self.medium_risk:
+        for elem in self.medium_risk + self.high_risk:
             a = []
             a += elem.keys()
             if a[0] == '21':

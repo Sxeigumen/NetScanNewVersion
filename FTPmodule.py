@@ -5,6 +5,7 @@ import ftplib as ftp
 import json
 
 
+# Класс содержит возможные статусы порта 21
 class ftpStatus:
     impossible_anon_connection = "Anonymous connection is not possible"
     incorrect_sign = "Incorrect login or password"
@@ -23,6 +24,7 @@ class ftpModule(object):
         self.status = ''
         self.anon = True
 
+    # Функция для получения баннера
     def getFtpBanner(self):
         try:
             soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -41,6 +43,7 @@ class ftpModule(object):
             self.status = ftpStatus.refused_connection
             return
 
+    # Функция для анонимного подключения к серверу
     def anonLogin(self):
         try:
             service = ftp.FTP(self.host_ip)
@@ -66,6 +69,7 @@ class ftpModule(object):
             print(ftpStatus.impossible_anon_connection)
             self.status = ftpStatus.impossible_anon_connection
 
+    # Функция для аутентификации на ftp сервере
     def authLogin(self):
         try:
             service = ftp.FTP(self.host_ip)
@@ -89,6 +93,7 @@ class ftpModule(object):
             service.quit()
             self.status = ftpStatus.incorrect_sign
 
+    # Функция для создания отчёта о сканировании
     def toJson(self):
         data_base = {}
         main_info = []
@@ -103,7 +108,4 @@ class ftpModule(object):
 
 
 if __name__ == "__main__":
-    t = ftpModule("192.168.50.1")
-    t.anonLogin()
-    t.getFtpBanner()
-    t.toJson()
+    print('ftp')
