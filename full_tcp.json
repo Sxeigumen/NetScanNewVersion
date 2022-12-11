@@ -1,7 +1,63 @@
 {
    "ip": {
-      "192.168.50.1": {
+      "195.19.50.247": {
          "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.40.202": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.41": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
             {
                "80": {
                   "port_info": "Service: HTTP",
@@ -9,27 +65,6 @@
                }
             }
          ]
-      },
-      "192.168.50.62": "No open ports",
-      "192.168.50.137": "No open ports",
-      "192.168.50.145": {
-         "ports": [
-            {
-               "139": {
-                  "port_info": "Service: NETBIOS-SSN",
-                  "danger_level": "Medium risk"
-               }
-            },
-            {
-               "445": {
-                  "port_info": "Service: MICROSOFT-DS",
-                  "danger_level": "Medium risk"
-               }
-            }
-         ]
-      },
-      "192.168.50.154": "No open ports",
-      "192.168.50.155": "No open ports",
-      "192.168.50.178": "No open ports"
+      }
    }
 }

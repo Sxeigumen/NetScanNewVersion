@@ -53,6 +53,7 @@ class PortScanFunc(object):
         self.ports_banners = {}
         self.ports_services = {}
         self.closed_ports = {}
+
     """
     def port_scan(self, port):
         ip_request = scapy.IP(dst=self.target_ip)
@@ -77,6 +78,7 @@ class PortScanFunc(object):
                 port_lib = {"port_status": PortStatus.CLOSED, "port_number": port}
                 return port_lib
     """
+
     def secret_port_scan(self, port):
         ip_request = scapy.IP(dst=self.target_ip)
         syn_request = scapy.TCP(dport=port, flags="S")
@@ -90,7 +92,7 @@ class PortScanFunc(object):
                     """
                     rst_request = scapy.TCP(dport=port, flags="R")
                     rst_packet = ip_request / rst_request
-    
+
                     send_rst = scapy.sr(rst_packet, timeout=1, verbose=False)
                     """
                     port_lib = {"port_status": PortStatus.OPEN, "port_number": port}
@@ -148,22 +150,19 @@ class PortScanFunc(object):
                 self.closed_ports.update({target_ports['port_number']: target_ports['port_status']})
 
     def port_status_print(self):
-
+        print(f"{'PORT':<10}  {'STATUS':<10}  {'INFO'}")
         for elem in self.ports_banners.keys():
             try:
                 print(
-                    str(elem) + '/tcp' + '\t' * 2 + "  Open" + '\t' * 2 + str(get_port_service(elem)) + '\t' + "Banner: " +
-                    self.ports_banners[elem])
+                    f"{str(elem) + '/tcp':<10}  Open  {get_port_service(elem):<10}  Banner: {self.ports_banners[elem]}")
             except TypeError:
-                print(str(elem) + '/tcp' + '\t' * 2 + "  Open" + '\t' * 2 + str(get_port_service(elem)) + '\t'
-                      + "Banner: ")
+                print(f"{str(elem) + '/tcp':<10}  Open  {get_port_service(elem):<10}  Banner: ")
                 print(self.ports_banners[elem])
-
         for elem in self.ports_services.keys():
-            print(str(elem) + '/tcp' + '\t' * 2 + "  Open" + '\t' * 2 + "Service: " + self.ports_services[elem])
+            print(f"{str(elem) + '/tcp':<10}  {'Open':<10}  Service: {self.ports_services[elem]}")
 
         for elem in self.closed_ports.keys():
-            print(str(elem) + '/tcp' + '\t' * 2 + self.closed_ports[elem])
+            print(f"{str(elem) + '/tcp':<10}  Close")
 
         print("\n")
 

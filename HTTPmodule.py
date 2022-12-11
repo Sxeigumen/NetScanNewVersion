@@ -1,7 +1,11 @@
+import pprint
+
 import scapy.all as scapy
 import time
 import socket
 import json
+import http.client
+import ssl
 
 
 # sock.sendall(b"GET / HTTP/1.1\r\nHost:" + self.ip.encode('UTF-8') + b"\r\nConnection: close\r\n\r\n")
@@ -20,6 +24,7 @@ class httpModule:
         self.banner = ''
         self.status = ''
         self.massage = ''
+        self.headers = []
 
     def unitScan(self):
         try:
@@ -27,8 +32,10 @@ class httpModule:
             sock.settimeout(15)
             sock.connect((self.ip, 80))
             sock.sendall(b"GET / HTTP/1.1\r\nHost:" + self.ip.encode('UTF-8') + b"\r\n\r\n")
-            self.content = sock.recv(4096).strip().decode()
+            self.content = sock.recv(1024).strip().decode()
             sock.close()
+        except UnicodeDecodeError:
+            self.content = f"Decode Error"
         except ConnectionRefusedError:
             print(httpStatus.refused_connection)
             self.status = httpStatus.refused_connection
@@ -50,6 +57,22 @@ class httpModule:
             if "HTTP" in elem:
                 self.status = elem
 
+    def getHeaders(self):
+        try:
+            name = socket.gethostbyaddr(self.ip)[0]
+            connection = http.client.HTTPSConnection(name)
+            connection.request("GET", "/")
+            response = connection.getresponse()
+            headers = response.getheaders()
+            self.headers = headers
+        except socket.herror:
+            print(httpStatus.impossible_connection)
+        except ssl.SSLCertVerificationError:
+            print(httpStatus.impossible_connection)
+        except ConnectionRefusedError:
+            print(httpStatus.impossible_connection)
+
+
     def toJson(self):
         data_base = {}
         main_info = []
@@ -64,7 +87,9 @@ class httpModule:
 
 
 if __name__ == "__main__":
-    pp = httpModule("192.168.50.56")
+    pp = httpModule("77.88.55.50")
     pp.unitScan()
     pp.getMassage()
     pp.toJson()
+    pp.getHeaders()
+    print(pp.headers)

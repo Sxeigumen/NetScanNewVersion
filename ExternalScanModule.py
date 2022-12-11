@@ -3,6 +3,7 @@ from datetime import datetime
 import sys
 import scapy.all as scapy
 import ipaddress
+import json
 
 ports = {
     20: "FTP-DATA", 21: "FTP", 22: "SSH", 23: "Telnet",
@@ -71,6 +72,19 @@ class PortScanFunc(object):
         self.ports_services = {}
         self.closed_ports = {}
 
+    def port_scan(self, port):
+
+        sock = socket.socket()
+        sock.settimeout(1)
+        try:
+            sock.connect((self.target_ip, port))
+        except socket.error:
+            port_lib = {"port_status": PortStatus.CLOSED, "port_number": port}
+            return port_lib
+        sock.close()
+        port_lib = {"port_status": PortStatus.OPEN, "port_number": port}
+        return port_lib
+
     def secret_port_scan(self, port):
         ip_request = scapy.IP(dst=self.target_ip)
         syn_request = scapy.TCP(dport=port, flags="S")
@@ -136,61 +150,136 @@ class PortScanFunc(object):
                 self.closed_ports.update({target_ports['port_number']: target_ports['port_status']})
 
     def console_print(self):
-
+        print(self.target_ip)
+        print(f"{'PORT':<10}  {'STATUS':<10}  {'INFO'}")
         for elem in self.ports_banners.keys():
             try:
-                print(str(elem) + '/tcp' + '\t' * 2 + "  Open" + '\t' * 2 + str(get_port_service(elem)) + '\t'
-                      + "Banner: " + self.ports_banners[elem])
+                print(
+                    f"{str(elem) + '/tcp':<10}  {'Open':<10}  {get_port_service(elem):<10}  Banner: {self.ports_banners[elem]}")
             except TypeError:
-                print(str(elem) + '/tcp' + '\t' * 2 + "  Open" + '\t' * 2 + str(get_port_service(elem)) + '\t'
-                      + "Banner: ")
+                print(f"{str(elem) + '/tcp':<10}  {'Open':<10}  {get_port_service(elem):<10}  Banner: ")
                 print(self.ports_banners[elem])
-
         for elem in self.ports_services.keys():
-            print(str(elem) + '/tcp' + '\t' * 2 + "  Open" + '\t' * 2 + "Service: " + self.ports_services[elem])
+            print(f"{str(elem) + '/tcp':<10}  {'Open':<10}  Service: {self.ports_services[elem]}")
 
         for elem in self.closed_ports.keys():
-            print(str(elem) + '/tcp' + '\t' * 2 + self.closed_ports[elem])
+            print(f"{str(elem) + '/tcp':<10}  Close")
+
         print("\n")
 
     def only_meaningful_print(self):
         print("IP: " + self.target_ip + '\n')
         for elem in self.ports_banners.keys():
             try:
-                print(f"{str(elem) + '/tcp':<8}   Open  {get_port_service(elem):<8}   Banner: {self.ports_banners[elem]}")
+                print(
+                    f"{str(elem) + '/tcp':<8}   Open  {get_port_service(elem):<8}   Banner: {self.ports_banners[elem]}")
             except TypeError:
                 print(f"{str(elem) + '/tcp':<8}   Open  {get_port_service(elem):<8}   Banner: ")
                 print(self.ports_banners[elem])
 
 
-def inet_scanner(ip, cidr):
-    target = IpInfo(ip, cidr)
+def inet_scanner_cidr(_ip, cidr, details_mode=False):
+    data_base = {}
+    ip_data = {}
+    target = IpInfo(_ip, cidr)
     for ip in target.ips_list:
+        single_ip_ports = []
+        ports_data = {}
+
         scan_obj = PortScanFunc(ip)
         scan_obj.ip_ports_scan(ports.keys())
-        scan_obj.only_meaningful_print()
+        scan_obj.console_print()
+
+        for elem in scan_obj.ports_banners.keys():
+            try:
+                info = {"port_info": "Banner: " + scan_obj.ports_banners[elem], "danger_level": "High risk"}
+            except TypeError:
+                info = {"port_info": "Service: " + get_port_service(elem), "danger_level": "Medium risk"}
+            port_info = {elem: info}
+            single_ip_ports.append(port_info)
+
+        for elem in scan_obj.ports_services.keys():
+            info = {"port_info": "Service: " + scan_obj.ports_services[elem], "danger_level": "Medium risk"}
+            port_info = {elem: info}
+            single_ip_ports.append(port_info)
+
+        if not details_mode:
+            ports_data["ports"] = single_ip_ports
+
+            if len(ports_data["ports"]) == 0:
+                ip_data[ip] = "No open ports"
+            else:
+                ip_data[ip] = ports_data
+
+        else:
+            for elem in scan_obj.closed_ports.keys():
+                info = {"danger_level": "low risk"}
+                port_info = {elem: info}
+                single_ip_ports.append(port_info)
+
+            ports_data["ports"] = single_ip_ports
+            ip_data[ip] = ports_data
+
+    data_base["ip"] = ip_data
+    with open("full_tcp.json", "w") as file:
+        json.dump(data_base, file, indent=3)
+
+
+def inet_scanner_list(ips_list, typer, details_mode=False):
+    data_base = {}
+    ip_data = {}
+    for ip in ips_list:
+        obj = ip
+        if typer == 'domain':
+            try:
+                obj = socket.gethostbyname(ip)
+            except socket.herror:
+                continue
+        single_ip_ports = []
+        ports_data = {}
+
+        scan_obj = PortScanFunc(obj)
+        scan_obj.ip_ports_scan(ports.keys())
+        scan_obj.console_print()
+
+        for elem in scan_obj.ports_banners.keys():
+            try:
+                info = {"port_info": "Banner: " + scan_obj.ports_banners[elem], "danger_level": "High risk"}
+            except TypeError:
+                info = {"port_info": "Service: " + get_port_service(elem), "danger_level": "Medium risk"}
+            port_info = {elem: info}
+            single_ip_ports.append(port_info)
+
+        for elem in scan_obj.ports_services.keys():
+            info = {"port_info": "Service: " + scan_obj.ports_services[elem], "danger_level": "Medium risk"}
+            port_info = {elem: info}
+            single_ip_ports.append(port_info)
+
+        if not details_mode:
+            ports_data["ports"] = single_ip_ports
+
+            if len(ports_data["ports"]) == 0:
+                ip_data[obj] = "No open ports"
+            else:
+                ip_data[obj] = ports_data
+
+        else:
+            for elem in scan_obj.closed_ports.keys():
+                info = {"danger_level": "low risk"}
+                port_info = {elem: info}
+                single_ip_ports.append(port_info)
+
+            ports_data["ports"] = single_ip_ports
+            ip_data[obj] = ports_data
+
+    data_base["ip"] = ip_data
+    with open("full_tcp.json", "w") as file:
+        json.dump(data_base, file, indent=3)
 
 
 default_ports = []
 default_ports += ports.keys()
 
 if __name__ == "__main__":
-    """    
-    text = open('banners_example.txt', 'w')
-    set1 = ipaddress.ip_network('195.19.0.0/16')
-    ip_list = [str(ip) for ip in set1]
-    for ip in ip_list:
-        print(ip)
-        x = PortScanFunc(ip)
-        x.ip_ports_scan(ports.keys())
-        x.console_print()
-        for elem in x.ports_banners:
-            try:
-                text.write(x.ports_banners[elem] + '\n')
-            except TypeError:
-                continue
-
-        print("=======================")
-    text.close()
-    """
-    inet_scanner("87.240.129.0", '24')
+    ip = ["h247.net50.bmstu.ru", 'mt11.bmstu.ru', 'rk1.bmstu.ru']
+    inet_scanner_list(ip, 'domain')

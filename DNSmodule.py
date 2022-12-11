@@ -2,6 +2,7 @@ import scapy.all as scapy
 import time
 import socket
 import json
+import dns.resolver
 
 
 class DnsStatus:
@@ -16,6 +17,7 @@ class DNSModule:
         self.banner = ''
         self.status = ''
         self.host_name = ''
+        self.answer = ''
 
     def unitScan(self):
         try:
@@ -28,6 +30,9 @@ class DNSModule:
             self.banner = banner
             sock.close()
             self.status = DnsStatus.successful_connection
+        except socket.gaierror:
+            print(DnsStatus.impossible_connection)
+            self.status = DnsStatus.impossible_connection
         except TimeoutError:
             print(DnsStatus.impossible_connection)
             self.status = DnsStatus.impossible_connection
@@ -37,6 +42,27 @@ class DNSModule:
         except ConnectionRefusedError:
             print(DnsStatus.refused_connection)
             self.status = DnsStatus.refused_connection
+
+    def getRequest(self):
+        try:
+            host_name = socket.gethostbyaddr(self.ip)[0]
+        except socket.gaierror:
+            print("No answer")
+            return
+        except socket.herror:
+            print("No answer")
+            return
+        req = ['A', 'AAAA', 'MX', 'NS', 'TXT', 'SOA']
+        for elem in req:
+            try:
+                answer = dns.resolver.resolve(host_name, elem)
+            except dns.resolver.NoAnswer:
+                print("No answer")
+                continue
+            except dns.resolver.LifetimeTimeout:
+                print("No answer")
+                continue
+            print(answer.rrset)
 
     def toJson(self):
         data_base = {}
@@ -54,6 +80,6 @@ class DNSModule:
 
 
 if __name__ == "__main__":
-    a = DNSModule("216.58.209.174")
+    a = DNSModule()
+    a.getRequest()
     a.unitScan()
-    a.toJson()
