@@ -1,5 +1,4 @@
 import pprint
-
 import scapy.all as scapy
 import time
 import socket
@@ -30,9 +29,13 @@ class httpModule:
     # Функция для сканирования порта 80
     def unitScan(self):
         try:
+            # Создание INET и STREAM сокета
+            # Эти константы представляют семейство адресов и протоколов
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.settimeout(15)
+            # Подключение к хосту по порту 80
             sock.connect((self.ip, 80))
+            # Отправляем сообщение на http сервер
             sock.sendall(b"GET / HTTP/1.1\r\nHost:" + self.ip.encode('UTF-8') + b"\r\n\r\n")
             self.content = sock.recv(1024).strip().decode()
             sock.close()
@@ -74,6 +77,10 @@ class httpModule:
         except ssl.SSLCertVerificationError:
             print(httpStatus.impossible_connection)
         except ConnectionRefusedError:
+            print(httpStatus.impossible_connection)
+        except socket.gaierror:
+            print(httpStatus.impossible_connection)
+        except TimeoutError:
             print(httpStatus.impossible_connection)
 
     # Функция для создания отчёта о сканировании

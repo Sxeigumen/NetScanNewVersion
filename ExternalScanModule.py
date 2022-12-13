@@ -48,7 +48,7 @@ class IpInfo(object):
         self.ips_list = ip_list_creator(_ip + '/' + _cidr)
 
 
-# Класс используемый для проверки состояния и статуса порто
+# Класс используемый для проверки состояния и статуса портов
 class PortScanFunc(object):
 
     def __init__(self, _ip):
@@ -107,12 +107,16 @@ class PortScanFunc(object):
                 host = self.target_ip
                 port = target_ports['port_number']
                 try:
+                    # Создание INET и STREAM сокета
+                    # Эти константы представляют семейство адресов и протоколов
                     soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                    # Подключение к хосту host по порту port
                     soc.connect((host, port))
                     soc.settimeout(2)
                 except TimeoutError:
                     continue
                 try:
+                    # Попытка получить баннер
                     banner = soc.recv(1024).decode().strip()
                     if banner == "":
                         self.ports_services.update(

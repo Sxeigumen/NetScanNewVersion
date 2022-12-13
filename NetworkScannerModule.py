@@ -149,7 +149,7 @@ def dns(ip):
     print(f"HOST: {ip}")
     print(f"Status: {target.status}")
     print(f"Banner: {target.banner}")
-    print(f"Banner: {target.host_name}")
+    print(f"Host Name: {target.host_name}")
     target.getRequest()
 
 

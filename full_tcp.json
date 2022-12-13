@@ -1,3 +1,1811 @@
 {
-   "ip": {}
+   "ip": {
+      "195.19.50.0": "No open ports",
+      "195.19.50.1": "No open ports",
+      "195.19.50.2": "No open ports",
+      "195.19.50.3": "No open ports",
+      "195.19.50.4": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.5": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.6": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.7": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 2.0.5)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.8": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.9": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.10": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.11": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.12": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.13": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.14": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 2.0.5)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.15": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.16": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.17": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.18": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 3.0.2)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.19": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.20": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.21": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 2.0.5)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.22": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.23": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.24": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.25": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.26": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.27": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.28": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.29": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.30": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.31": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.32": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.33": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 FTP Server ready.",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.34": "No open ports",
+      "195.19.50.35": "No open ports",
+      "195.19.50.36": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 2.0.5)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.37": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.38": "No open ports",
+      "195.19.50.39": "No open ports",
+      "195.19.50.40": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.41": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.42": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.43": "No open ports",
+      "195.19.50.44": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.45": "No open ports",
+      "195.19.50.46": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_5.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.47": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.48": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.49": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.50": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Service: SSH",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "5900": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.51": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Service: SSH",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "5900": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.52": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.53": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.54": "No open ports",
+      "195.19.50.55": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.56": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.57": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.58": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.59": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 3.0.3)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.60": "No open ports",
+      "195.19.50.61": "No open ports",
+      "195.19.50.62": "No open ports",
+      "195.19.50.63": "No open ports",
+      "195.19.50.64": "No open ports",
+      "195.19.50.65": "No open ports",
+      "195.19.50.66": "No open ports",
+      "195.19.50.67": "No open ports",
+      "195.19.50.68": "No open ports",
+      "195.19.50.69": "No open ports",
+      "195.19.50.70": "No open ports",
+      "195.19.50.71": "No open ports",
+      "195.19.50.72": "No open ports",
+      "195.19.50.73": "No open ports",
+      "195.19.50.74": "No open ports",
+      "195.19.50.75": "No open ports",
+      "195.19.50.76": "No open ports",
+      "195.19.50.77": "No open ports",
+      "195.19.50.78": "No open ports",
+      "195.19.50.79": "No open ports",
+      "195.19.50.80": "No open ports",
+      "195.19.50.81": "No open ports",
+      "195.19.50.82": "No open ports",
+      "195.19.50.83": "No open ports",
+      "195.19.50.84": "No open ports",
+      "195.19.50.85": "No open ports",
+      "195.19.50.86": "No open ports",
+      "195.19.50.87": "No open ports",
+      "195.19.50.88": "No open ports",
+      "195.19.50.89": "No open ports",
+      "195.19.50.90": "No open ports",
+      "195.19.50.91": "No open ports",
+      "195.19.50.92": "No open ports",
+      "195.19.50.93": "No open ports",
+      "195.19.50.94": "No open ports",
+      "195.19.50.95": "No open ports",
+      "195.19.50.96": "No open ports",
+      "195.19.50.97": "No open ports",
+      "195.19.50.98": "No open ports",
+      "195.19.50.99": "No open ports",
+      "195.19.50.100": "No open ports",
+      "195.19.50.101": "No open ports",
+      "195.19.50.102": "No open ports",
+      "195.19.50.103": "No open ports",
+      "195.19.50.104": "No open ports",
+      "195.19.50.105": "No open ports",
+      "195.19.50.106": "No open ports",
+      "195.19.50.107": "No open ports",
+      "195.19.50.108": "No open ports",
+      "195.19.50.109": "No open ports",
+      "195.19.50.110": "No open ports",
+      "195.19.50.111": "No open ports",
+      "195.19.50.112": "No open ports",
+      "195.19.50.113": "No open ports",
+      "195.19.50.114": "No open ports",
+      "195.19.50.115": "No open ports",
+      "195.19.50.116": "No open ports",
+      "195.19.50.117": "No open ports",
+      "195.19.50.118": "No open ports",
+      "195.19.50.119": "No open ports",
+      "195.19.50.120": "No open ports",
+      "195.19.50.121": "No open ports",
+      "195.19.50.122": "No open ports",
+      "195.19.50.123": "No open ports",
+      "195.19.50.124": "No open ports",
+      "195.19.50.125": "No open ports",
+      "195.19.50.126": "No open ports",
+      "195.19.50.127": "No open ports",
+      "195.19.50.128": "No open ports",
+      "195.19.50.129": {
+         "ports": [
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.130": "No open ports",
+      "195.19.50.131": "No open ports",
+      "195.19.50.132": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.133": "No open ports",
+      "195.19.50.134": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.135": "No open ports",
+      "195.19.50.136": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.137": "No open ports",
+      "195.19.50.138": "No open ports",
+      "195.19.50.139": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 2.0.5)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.140": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.141": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.142": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.143": "No open ports",
+      "195.19.50.144": "No open ports",
+      "195.19.50.145": "No open ports",
+      "195.19.50.146": "No open ports",
+      "195.19.50.147": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.148": "No open ports",
+      "195.19.50.149": "No open ports",
+      "195.19.50.150": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 2.0.5)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "8080": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.151": "No open ports",
+      "195.19.50.152": "No open ports",
+      "195.19.50.153": "No open ports",
+      "195.19.50.154": "No open ports",
+      "195.19.50.155": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "5432": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.156": "No open ports",
+      "195.19.50.157": "No open ports",
+      "195.19.50.158": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.159": "No open ports",
+      "195.19.50.160": "No open ports",
+      "195.19.50.161": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.162": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.163": "No open ports",
+      "195.19.50.164": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.165": "No open ports",
+      "195.19.50.166": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.167": "No open ports",
+      "195.19.50.168": "No open ports",
+      "195.19.50.169": "No open ports",
+      "195.19.50.170": "No open ports",
+      "195.19.50.171": "No open ports",
+      "195.19.50.172": "No open ports",
+      "195.19.50.173": "No open ports",
+      "195.19.50.174": "No open ports",
+      "195.19.50.175": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.176": "No open ports",
+      "195.19.50.177": "No open ports",
+      "195.19.50.178": "No open ports",
+      "195.19.50.179": "No open ports",
+      "195.19.50.180": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.181": "No open ports",
+      "195.19.50.182": "No open ports",
+      "195.19.50.183": "No open ports",
+      "195.19.50.184": "No open ports",
+      "195.19.50.185": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.186": "No open ports",
+      "195.19.50.187": "No open ports",
+      "195.19.50.188": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.189": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 2.0.5)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.190": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.191": "No open ports",
+      "195.19.50.192": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 2.0.5)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.193": "No open ports",
+      "195.19.50.194": "No open ports",
+      "195.19.50.195": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.196": "No open ports",
+      "195.19.50.197": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.198": "No open ports",
+      "195.19.50.199": {
+         "ports": [
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.200": "No open ports",
+      "195.19.50.201": "No open ports",
+      "195.19.50.202": "No open ports",
+      "195.19.50.203": "No open ports",
+      "195.19.50.204": "No open ports",
+      "195.19.50.205": "No open ports",
+      "195.19.50.206": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 2.0.5)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.207": "No open ports",
+      "195.19.50.208": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.209": "No open ports",
+      "195.19.50.210": "No open ports",
+      "195.19.50.211": "No open ports",
+      "195.19.50.212": "No open ports",
+      "195.19.50.213": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.214": "No open ports",
+      "195.19.50.215": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 (vsFTPd 2.0.5)",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "143": {
+                  "port_info": "Banner: * OK pop3/imap service.",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "993": {
+                  "port_info": "Service: IMAPS",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "995": {
+                  "port_info": "Service: POP3S",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.216": {
+         "ports": [
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.217": "No open ports",
+      "195.19.50.218": "No open ports",
+      "195.19.50.219": "No open ports",
+      "195.19.50.220": "No open ports",
+      "195.19.50.221": "No open ports",
+      "195.19.50.222": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 FTP Server ready.",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.223": "No open ports",
+      "195.19.50.224": "No open ports",
+      "195.19.50.225": "No open ports",
+      "195.19.50.226": "No open ports",
+      "195.19.50.227": "No open ports",
+      "195.19.50.228": "No open ports",
+      "195.19.50.229": "No open ports",
+      "195.19.50.230": "No open ports",
+      "195.19.50.231": "No open ports",
+      "195.19.50.232": "No open ports",
+      "195.19.50.233": "No open ports",
+      "195.19.50.234": "No open ports",
+      "195.19.50.235": "No open ports",
+      "195.19.50.236": "No open ports",
+      "195.19.50.237": "No open ports",
+      "195.19.50.238": "No open ports",
+      "195.19.50.239": "No open ports",
+      "195.19.50.240": "No open ports",
+      "195.19.50.241": "No open ports",
+      "195.19.50.242": "No open ports",
+      "195.19.50.243": "No open ports",
+      "195.19.50.244": "No open ports",
+      "195.19.50.245": "No open ports",
+      "195.19.50.246": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "3306": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "5432": {
+                  "port_info": "Service: UNKNOWN",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.247": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_4.3",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.248": "No open ports",
+      "195.19.50.249": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 FTP Server ready.",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.250": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.251": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.252": {
+         "ports": [
+            {
+               "21": {
+                  "port_info": "Banner: 220 FTP Server ready.",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_7.4",
+                  "danger_level": "High risk"
+               }
+            },
+            {
+               "80": {
+                  "port_info": "Service: HTTP",
+                  "danger_level": "Medium risk"
+               }
+            },
+            {
+               "443": {
+                  "port_info": "Service: HTTPS",
+                  "danger_level": "Medium risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.253": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.254": {
+         "ports": [
+            {
+               "22": {
+                  "port_info": "Banner: SSH-2.0-OpenSSH_8.0",
+                  "danger_level": "High risk"
+               }
+            }
+         ]
+      },
+      "195.19.50.255": "No open ports"
+   }
 }

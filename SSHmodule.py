@@ -20,8 +20,11 @@ class SSHModule:
     # Функция для сканирования порта 22
     def unitScan(self):
         try:
+            # Создание INET и STREAM сокета
+            # Эти константы представляют семейство адресов и протоколов
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.settimeout(10)
+            # Подключение к хосту по порту 22
             sock.connect((self.ip, 22))
             banner = sock.recv(1024).strip().decode()
             self.banner = banner

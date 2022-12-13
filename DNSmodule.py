@@ -23,8 +23,11 @@ class DNSModule:
     # Функция сканирования порта 53
     def unitScan(self):
         try:
+            # Создание INET и STREAM сокета
+            # Эти константы представляют семейство адресов и протоколов
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.settimeout(10)
+            # Подключение к хосту по порту 53
             sock.connect((self.ip, 53))
             host_name = socket.gethostbyaddr(self.ip)[0]
             self.host_name = host_name

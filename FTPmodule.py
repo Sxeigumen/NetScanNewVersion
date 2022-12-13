@@ -27,8 +27,11 @@ class ftpModule(object):
     # Функция для получения баннера
     def getFtpBanner(self):
         try:
+            # Создание INET и STREAM сокета
+            # Эти константы представляют семейство адресов и протоколов
             soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             soc.settimeout(15)
+            # Подключение к хосту по порту
             soc.connect((self.host_ip, self.port))
             ban = soc.recv(1024).decode().strip()
             self.banner = ban

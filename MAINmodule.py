@@ -70,6 +70,6 @@ if args.inet_cidr:
 if args.inet_list:
     NetworkScannerModule.external_scan_list(args.work_mode, args.det_mode)
 
-if args.analysis:
+if args.analysis is True:
     NetworkScannerModule.basic_analyze()
 
